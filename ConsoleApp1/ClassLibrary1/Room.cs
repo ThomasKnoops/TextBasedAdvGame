@@ -10,7 +10,7 @@ namespace ClassLibrary1
         public string Description { get; set; }
         public List<Item> Items { get; set; }
         public Enemy Enemy { get; set; }
-        private Dictionary<string, Room> LinkedRooms;
+        public Dictionary<string, Room> LinkedRooms { get; set; }
         
 
         public Room(string name)

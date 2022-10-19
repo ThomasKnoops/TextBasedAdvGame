@@ -60,7 +60,8 @@ namespace ClassLibrary1
 
             //Room 0 modifications
             Rooms[0].Description = "";
-            Rooms[0].Items.Add(//todo);
+            Rooms[0].Items.Add(new TextItem("Note", "Help me! I'm stuck for 10 days already! If I could find the key, I could escape this murderhouse..."));
+            Rooms[0].LinkedRooms.Add("up", Rooms[1]);
             //Room 1 modifications
             Rooms[1].Description = "";
             //Room 2 modifications
