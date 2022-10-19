@@ -30,21 +30,21 @@ namespace ClassLibrary1
             Rooms.Add(new Room("Basement")); //Room 0
             //ROOMS.BASEMENT, "Basement", "", new List<ITEMS>("note"), new Dictionary<string, ROOMS> { { "east", ROOMS.GRAND_HALL } }, null)
             Rooms.Add(new Room("Grand Hall")); //Room 1
-            //ROOMS.GRAND_HALL, "Grand Hall", "", null, new Dictionary<string, ROOMS> { { "west", ROOMS.BASEMENT }, {"north", ROOMS.STAIRCASE }, {"east1", ROOMS.DINING_ROOM }, {"east2", ROOMS.STUDY }, {"east3", ROOMS.YARD }, {"south", ROOMS.EXIT } }, null)
+            //ROOMS.GRAND_HALL, "Grand Hall", "", null, new Dictionary<string, ROOMS> { { "down", ROOMS.BASEMENT }, {"up", ROOMS.STAIRCASE }, {"east", ROOMS.DINING_ROOM }, {"west", ROOMS.STUDY }, {"north", ROOMS.YARD }, {"south", ROOMS.EXIT } }, null)
             Rooms.Add(new Room("Exit")); //Room 2
             //ROOMS.EXIT, "Exit", "", null, null, null)
             Rooms.Add(new Room("Yard")); //Room 3
-            //ROOMS.YARD, "Yard", "", new List<ITEMS>() { ITEMS.ROPE }, new Dictionary<string, ROOMS> { { "north", ROOMS.GRAND_HALL } }, null)
+            //ROOMS.YARD, "Yard", "", new List<ITEMS>() { ITEMS.ROPE }, new Dictionary<string, ROOMS> { { "south", ROOMS.GRAND_HALL } }, null)
             Rooms.Add(new Room("Study")); //Room 4
-            //ROOMS.STUDY, "Study", "", new List<ITEMS>() { ITEMS.KEY_EXIT }, new Dictionary<string, ROOMS> { {"north",  ROOMS.GRAND_HALL } }, null)
+            //ROOMS.STUDY, "Study", "", new List<ITEMS>() { ITEMS.KEY_EXIT }, new Dictionary<string, ROOMS> { {"east",  ROOMS.GRAND_HALL } }, null)
             Rooms.Add(new Room("Dining Room")); //Room 5
             //ROOMS.DINING_ROOM, "Dinnig Room", "", null, new Dictionary<string, ROOMS> { { "west", ROOMS.GRAND_HALL }, {"east", ROOMS.KITCHEN }, null)
             Rooms.Add(new Room("Kitchen")); //Room 6
             //ROOMS.KITCHEN, "Kitchen", "", new List<ITEMS>() { ITEMS.RAW_BEEF }, new Dictionary<string, ROOMS> { { "west", ROOMS.DINING_ROOM } }, null)
             Rooms.Add(new Room("Staircase")); //Room 7
-            //ROOMS.STAIRCASE, "Staircase", "", null, new Dictionary<string, ROOMS> { { "south", ROOMS.GRAND_HALL },{"north", ROOMS.UPPER_HALL}, null)
+            //ROOMS.STAIRCASE, "Staircase", "", null, new Dictionary<string, ROOMS> { { "down", ROOMS.GRAND_HALL },{"up", ROOMS.UPPER_HALL}, null)
             Rooms.Add(new Room("Upper hall")); //Room 8
-            //ROOMS.UPPER_HALL, "Upper Hall", "", null, new Dictionary<string, ROOMS> { { "south", ROOMS.STAIRCASE }, {"west", ROOMS.MASTER_BEDROOM }, {"north", ROOMS.SECOND_BEDROOM}, { "east", ROOMS.UTILITY_CLOSET },{"north2", ROOMS.ATTIC } }, null)
+            //ROOMS.UPPER_HALL, "Upper Hall", "", null, new Dictionary<string, ROOMS> { { "down", ROOMS.STAIRCASE }, {"west", ROOMS.MASTER_BEDROOM }, {"north", ROOMS.SECOND_BEDROOM}, { "east", ROOMS.UTILITY_CLOSET },{"up", ROOMS.ATTIC } }, null)
             Rooms.Add(new Room("Master Bedroom")); //Room 9
             //ROOMS.MASTER_BEDROOM, "Master Bedroom", "", null, new List<ROOMS> { ROOMS.UPPER_HALL, ROOMS.MASTER_BATHROOM}, new Enemy())
             Rooms.Add(new Room("Master Bathroom")); //Room 10
