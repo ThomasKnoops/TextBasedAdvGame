@@ -68,29 +68,35 @@ namespace ClassLibrary1
             Rooms[2].Description = "";
             //Room 3 modifications
             Rooms[3].Description = "";
+            Rooms[3].Items.Add(new UselessItem("Rope", "A 10 meter rope in good condition."));
             //Room 4 modifications
             Rooms[4].Description = "";
+            Rooms[4].Items.Add(new Key("Key", "This is a copper key, used to open doors. But what door does it open?"));
             //Room 5 modifications
             Rooms[5].Description = "";
             //Room 6 modifications
             Rooms[6].Description = "";
+            Rooms[6].Items.Add(new Food("Raw Beef", "Some raw beef, I wouldn't eat it"));
             //Room 7 modifications
             Rooms[7].Description = "";
             //Room 8 modifications
             Rooms[8].Description = "";
             //Room 9 modifications
             Rooms[9].Description = "";
+            Rooms[9].Enemy = new Enemy();
             //Room 10 modifications
             Rooms[10].Description = "";
+            Rooms[10].Items.Add(new Key("Key", "This is an iron key, used to open doors. But what door does it open?"));
             //Room 11 modifications
             Rooms[11].Description = "";
             //Room 12 modifications
             Rooms[12].Description = "";
             //Room 13 modifications
             Rooms[13].Description = "";
+            Rooms[13].Items.Add(new LightSource("Flashlight", "A  flashlight that still has batteries in it! You can use it to see in the dark"));
             //Room 14 modifications
             Rooms[14].Description = "";
-
+            Rooms[14].Items.Add(new Key("Lockpick set", "Tools that can be used to open some doors, if they are easy enough"));
 
         }
 
