@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DTQUltTurxBsjhq7ovPnVVgIwy5AL2GzDh+Afzxi/DvGHhIfx9hMWCMPep1+GwCIqNY8+lEY+Lf5sgsTPJ0+nQ==",
+  "dgSpecHash": "4CktuIAdlCtel9t0h/wAgcsgjoijSJfnZAsMEbP3Odn4nCO8LRv8mxtVE6nUGlpi+EwLf9f2Ry9X2NMUuAF6Xg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
+  "projectFilePath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

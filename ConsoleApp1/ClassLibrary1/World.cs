@@ -6,27 +6,34 @@ namespace ClassLibrary1
 {
     public class World
     {
-        private ROOMS CurrentRoom;
-        private List<Room> Rooms = new List<Room>();
-        private List<Item> Items = new List<Item>();
+        private Room CurrentRoom;
+        public List<Room> Rooms { get; private set; } 
         private Player player;
 
         public World()
         {
-            /*
-            Items.Add(new Item(ITEMS.KEY_EXIT, "Key", "This is a copper key, used to open doors. But what door does it open?"));
-            Items.Add(new Item(ITEMS.KEY_STUDY, "Key", "This is an iron key, used to open doors. But what door does it open?"));
-            Items.Add(new Item(ITEMS.FLASHLIGHT, "Flashlight", "A  flashlight that still has batteries in it! You can use it to see in the dark"));
-            Items.Add(new Item(ITEMS.ROPE, "Rope", "A 10 meter rope in good condition."));
-            Items.Add(new Item(ITEMS.RAW_BEEF, "Raw Beef", "Some raw beef, I wouldn't eat it"));
-            Items.Add(new Item(ITEMS))
-            */
+            GenerateRooms();
+            AddRoomInfo();
+            
+        }
 
+        /*
+        private Room GetRoom(ROOMS room)
+        {
+            foreach(Room r in Rooms)
+            {
+                if(r.EnumName == room)
+                {
+                    return r;
+                }
+            }
+            return null;
+        }
+        */
 
-
-
-
-
+        public void GenerateRooms()
+        {
+            Rooms = new List<Room>();
             Rooms.Add(new Room("Basement")); //Room 0
             //ROOMS.BASEMENT, "Basement", "", new List<ITEMS>("note"), new Dictionary<string, ROOMS> { { "east", ROOMS.GRAND_HALL } }, null)
             Rooms.Add(new Room("Grand Hall")); //Room 1
@@ -56,60 +63,53 @@ namespace ClassLibrary1
             Rooms.Add(new Room("Utility closet")); //Room 13
             //ROOMS.UTILITY_CLOSET, "Utility Closet", "", new List<ITEMS>() { ITEMS.FLASHLIGHT }, new List<ROOMS> { ROOMS.UPPER_HALL }, null)
             Rooms.Add(new Room("Attic")); //Room 14
-                                          //ROOMS.ATTIC, "Attic", "", new List<ITEMS>() { ITEMS.LOCKPICK }, new List<ROOMS> { ROOMS.UPPER_HALL }, null)
+            //ROOMS.ATTIC, "Attic", "", new List<ITEMS>() { ITEMS.LOCKPICK }, new List<ROOMS> { ROOMS.UPPER_HALL }, null)
+        }
 
-            //Room 0 modifications
+        public void AddRoomInfo()
+        {
+            //Room 0 modifications (Basement)
             Rooms[0].Description = "";
             Rooms[0].Items.Add(new TextItem("Note", "Help me! I'm stuck for 10 days already! If I could find the key, I could escape this murderhouse..."));
             Rooms[0].LinkedRooms.Add("up", Rooms[1]);
-            //Room 1 modifications
+            //Room 1 modifications (Grand Hall)
             Rooms[1].Description = "";
-            //Room 2 modifications
+            //Room 2 modifications (Exit)
             Rooms[2].Description = "";
-            //Room 3 modifications
+            Rooms[2].Locked = true;
+            //Room 3 modifications (Yard)
             Rooms[3].Description = "";
             Rooms[3].Items.Add(new UselessItem("Rope", "A 10 meter rope in good condition."));
-            //Room 4 modifications
+            //Room 4 modifications (Study)
             Rooms[4].Description = "";
+            Rooms[4].Locked = true;
             Rooms[4].Items.Add(new Key("Key", "This is a copper key, used to open doors. But what door does it open?"));
-            //Room 5 modifications
+            //Room 5 modifications (Dining Room)
             Rooms[5].Description = "";
-            //Room 6 modifications
+            //Room 6 modifications (Kitchen)
             Rooms[6].Description = "";
             Rooms[6].Items.Add(new Food("Raw Beef", "Some raw beef, I wouldn't eat it"));
-            //Room 7 modifications
+            //Room 7 modifications (Staircase)
             Rooms[7].Description = "";
-            //Room 8 modifications
+            //Room 8 modifications (Upper hall)
             Rooms[8].Description = "";
-            //Room 9 modifications
+            //Room 9 modifications (Master Bedroom)
             Rooms[9].Description = "";
+            Rooms[9].Locked = true;
             Rooms[9].Enemy = new Enemy();
-            //Room 10 modifications
+            //Room 10 modifications (Master Bathroom)
             Rooms[10].Description = "";
             Rooms[10].Items.Add(new Key("Key", "This is an iron key, used to open doors. But what door does it open?"));
-            //Room 11 modifications
+            //Room 11 modifications (Guest Bedroom)
             Rooms[11].Description = "";
-            //Room 12 modifications
+            //Room 12 modifications (Guest Bathroom)
             Rooms[12].Description = "";
-            //Room 13 modifications
+            //Room 13 modifications (Utility closet)
             Rooms[13].Description = "";
             Rooms[13].Items.Add(new LightSource("Flashlight", "A  flashlight that still has batteries in it! You can use it to see in the dark"));
-            //Room 14 modifications
+            //Room 14 modifications (Attic)
             Rooms[14].Description = "";
             Rooms[14].Items.Add(new Key("Lockpick set", "Tools that can be used to open some doors, if they are easy enough"));
-
-        }
-
-        private Room GetRoom(ROOMS room)
-        {
-            foreach(Room r in Rooms)
-            {
-                if(r.EnumName == room)
-                {
-                    return r;
-                }
-            }
-            return null;
         }
     }
 }

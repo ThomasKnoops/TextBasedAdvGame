@@ -4,11 +4,11 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    internal class Enemy : Entity
+    public class Enemy : Entity
     {
         public bool Distracted { get; private set; }
 
-        public Enemy()
+        public Enemy():base()
         {
             Distracted = false;
         }

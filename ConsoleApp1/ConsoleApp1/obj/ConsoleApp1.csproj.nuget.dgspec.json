@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
+    "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
+        "projectUniqueName": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
         "projectName": "ClassLibrary1",
-        "projectPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
+        "projectPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
         "packagesPath": "C:\\Users\\Thoma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ClassLibrary1\\obj\\",
+        "outputPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\Thoma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
-                "projectPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGameThomassen\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj"
+              "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
+                "projectPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj"
               }
             }
           }

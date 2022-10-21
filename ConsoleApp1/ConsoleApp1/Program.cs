@@ -1,4 +1,5 @@
 ﻿using AdventureLib;
+using ClassLibrary1;
 using System;
 using System.Collections.Generic;
 
@@ -14,6 +15,16 @@ namespace ConsoleApp1
             foreach(var keyword in keywords)
             {
                 Console.WriteLine(keyword);
+            }
+
+            World w = new World();
+            foreach (Room x in w.Rooms)
+            {
+                Console.WriteLine(x.Name + " " + x.Locked);
+                if (x.Items.Count > 0)
+                {
+                    Console.WriteLine("        Item: " + x.Items[0].Name);
+                }
             }
         }
     }
