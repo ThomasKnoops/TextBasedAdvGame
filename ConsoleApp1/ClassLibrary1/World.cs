@@ -6,15 +6,16 @@ namespace ClassLibrary1
 {
     public class World
     {
-        private Room CurrentRoom;
-        public List<Room> Rooms { get; private set; } 
-        private Player player;
+        public Room CurrentRoom { get; set; }
+        public List<Room> Rooms { get; private set; }
+        public Player Player { get; private set; }
 
-        public World()
+        public World(string Name)
         {
             GenerateRooms();
             AddRoomInfo();
-            
+            Player = new Player(Name);
+            CurrentRoom = Rooms[0];
         }
 
         //Makes a list of all the rooms
@@ -101,7 +102,7 @@ namespace ClassLibrary1
             Rooms[8].LinkedRooms.Add("up", Rooms[14]);
             //Room 9 modifications (Master Bedroom)
             Rooms[9].Description = "";
-            Rooms[8].LinkedRooms.Add("down", Rooms[1]);
+            Rooms[9].LinkedRooms.Add("down", Rooms[1]);
             Rooms[9].Locked = true;
             Rooms[9].Enemy = new Enemy();
             //Room 10 modifications (Master Bathroom)
@@ -117,6 +118,23 @@ namespace ClassLibrary1
             //Room 14 modifications (Attic)
             Rooms[14].Description = "";
             Rooms[14].Items.Add(new Key("Lockpick set", "Tools that can be used to open some doors, if they are easy enough"));
+        }
+
+        //change current room
+        public void ChangeCurrentRoom(string Direction)
+        {
+            if (CurrentRoom.LinkedRooms.ContainsKey(Direction))
+            {
+                if (CurrentRoom.LinkedRooms[Direction].Locked)
+                    Console.WriteLine("I tried to open the door, but it is locked. I'll need to do something else");
+                else
+                {
+                    Console.WriteLine("I took the door to the " + Direction + ".");
+                    CurrentRoom = CurrentRoom.LinkedRooms[Direction];
+                    Console.WriteLine(CurrentRoom.Description);
+                }
+
+            }
         }
     }
 }
