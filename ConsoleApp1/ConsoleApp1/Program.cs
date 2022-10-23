@@ -9,8 +9,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! ");
-            string test = "woord1 woord2 woord3";
+            string test = "move left";
             Parser.ParseCommand(test, out List<String> keywords);
             foreach(var keyword in keywords)
             {
