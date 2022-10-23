@@ -113,21 +113,28 @@ namespace ClassLibrary1
             Rooms[8].LinkedRooms.Add("up", Rooms[14]);
             //Room 9 modifications (Master Bedroom)
             Rooms[9].Description = "";
-            Rooms[8].LinkedRooms.Add("down", Rooms[1]);
+            Rooms[9].LinkedRooms.Add("east", Rooms[8]);
+            Rooms[9].LinkedRooms.Add("west", Rooms[10]);
             Rooms[9].Locked = true;
             Rooms[9].Enemy = new Enemy();
             //Room 10 modifications (Master Bathroom)
             Rooms[10].Description = "";
+            Rooms[10].LinkedRooms.Add("east", Rooms[9]);
             Rooms[10].Items.Add(new Key("Key", "This is an iron key, used to open doors. But what door does it open?"));
             //Room 11 modifications (Guest Bedroom)
             Rooms[11].Description = "";
+            Rooms[11].LinkedRooms.Add("south", Rooms[8]);
+            Rooms[11].LinkedRooms.Add("north", Rooms[12]);
             //Room 12 modifications (Guest Bathroom)
             Rooms[12].Description = "";
+            Rooms[12].LinkedRooms.Add("south", Rooms[11]);
             //Room 13 modifications (Utility closet)
             Rooms[13].Description = "";
+            Rooms[13].LinkedRooms.Add("west", Rooms[8]);
             Rooms[13].Items.Add(new LightSource("Flashlight", "A  flashlight that still has batteries in it! You can use it to see in the dark"));
             //Room 14 modifications (Attic)
             Rooms[14].Description = "";
+            Rooms[14].LinkedRooms.Add("down", Rooms[8]);
             Rooms[14].Items.Add(new Key("Lockpick set", "Tools that can be used to open some doors, if they are easy enough"));
         }
     }
