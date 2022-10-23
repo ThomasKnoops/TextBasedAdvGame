@@ -73,28 +73,47 @@ namespace ClassLibrary1
             Rooms[0].Items.Add(new TextItem("Note", "Help me! I'm stuck for 10 days already! If I could find the key, I could escape this murderhouse..."));
             Rooms[0].LinkedRooms.Add("up", Rooms[1]);
             //Room 1 modifications (Grand Hall)
-            Rooms[1].Description = "";
+            Rooms[1].Description = "This seems like a big hub. Let's find out what's behind these doors.";
+            Rooms[1].LinkedRooms.Add("up", Rooms[7]);
+            Rooms[1].LinkedRooms.Add("down", Rooms[0]);
+            Rooms[1].LinkedRooms.Add("east", Rooms[5]);
+            Rooms[1].LinkedRooms.Add("west", Rooms[4]);
+            Rooms[1].LinkedRooms.Add("north", Rooms[3]);
+            Rooms[1].LinkedRooms.Add("south", Rooms[2]);
             //Room 2 modifications (Exit)
             Rooms[2].Description = "";
             Rooms[2].Locked = true;
             //Room 3 modifications (Yard)
             Rooms[3].Description = "";
+            Rooms[3].LinkedRooms.Add("south", Rooms[1]);
             Rooms[3].Items.Add(new UselessItem("Rope", "A 10 meter rope in good condition."));
             //Room 4 modifications (Study)
             Rooms[4].Description = "";
+            Rooms[4].LinkedRooms.Add("east", Rooms[1]);
             Rooms[4].Locked = true;
             Rooms[4].Items.Add(new Key("Key", "This is a copper key, used to open doors. But what door does it open?"));
             //Room 5 modifications (Dining Room)
             Rooms[5].Description = "";
+            Rooms[5].LinkedRooms.Add("west", Rooms[1]);
+            Rooms[5].LinkedRooms.Add("east", Rooms[6]);
             //Room 6 modifications (Kitchen)
             Rooms[6].Description = "";
+            Rooms[6].LinkedRooms.Add("west", Rooms[5]);
             Rooms[6].Items.Add(new Food("Raw Beef", "Some raw beef, I wouldn't eat it"));
             //Room 7 modifications (Staircase)
             Rooms[7].Description = "";
+            Rooms[7].LinkedRooms.Add("up", Rooms[8]);
+            Rooms[7].LinkedRooms.Add("down", Rooms[1]);
             //Room 8 modifications (Upper hall)
             Rooms[8].Description = "";
+            Rooms[8].LinkedRooms.Add("down", Rooms[7]);
+            Rooms[8].LinkedRooms.Add("west", Rooms[9]);
+            Rooms[8].LinkedRooms.Add("north", Rooms[11]);
+            Rooms[8].LinkedRooms.Add("east", Rooms[13]);
+            Rooms[8].LinkedRooms.Add("up", Rooms[14]);
             //Room 9 modifications (Master Bedroom)
             Rooms[9].Description = "";
+            Rooms[8].LinkedRooms.Add("down", Rooms[1]);
             Rooms[9].Locked = true;
             Rooms[9].Enemy = new Enemy();
             //Room 10 modifications (Master Bathroom)

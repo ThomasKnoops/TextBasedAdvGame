@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
+    "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
+        "projectUniqueName": "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
         "projectName": "ClassLibrary1",
-        "projectPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
-        "packagesPath": "C:\\Users\\Thoma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\obj\\",
+        "projectPath": "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
+        "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -59,17 +63,21 @@
         }
       }
     },
-    "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
-        "packagesPath": "C:\\Users\\Thoma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ConsoleApp1\\obj\\",
+        "projectPath": "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,8 +91,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
-                "projectPath": "C:\\Users\\Thoma\\Documents\\EhB\\Sem3\\NET_code\\AdventureGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj"
+              "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj": {
+                "projectPath": "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj"
               }
             }
           }
@@ -109,6 +117,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.29, 3.1.29]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
