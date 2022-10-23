@@ -17,20 +17,7 @@ namespace ClassLibrary1
             
         }
 
-        /*
-        private Room GetRoom(ROOMS room)
-        {
-            foreach(Room r in Rooms)
-            {
-                if(r.EnumName == room)
-                {
-                    return r;
-                }
-            }
-            return null;
-        }
-        */
-
+        //Makes a list of all the rooms
         public void GenerateRooms()
         {
             Rooms = new List<Room>();
@@ -66,6 +53,7 @@ namespace ClassLibrary1
             //ROOMS.ATTIC, "Attic", "", new List<ITEMS>() { ITEMS.LOCKPICK }, new List<ROOMS> { ROOMS.UPPER_HALL }, null)
         }
 
+        //updates the list with all the correct variables
         public void AddRoomInfo()
         {
             //Room 0 modifications (Basement)

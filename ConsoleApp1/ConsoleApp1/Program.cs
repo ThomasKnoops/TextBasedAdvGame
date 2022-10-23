@@ -9,6 +9,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            //random dinges van SenneS
             Console.WriteLine("Hello World! ");
             string test = "woord1 woord2 woord3";
             Parser.ParseCommand(test, out List<String> keywords);
@@ -17,15 +18,9 @@ namespace ConsoleApp1
                 Console.WriteLine(keyword);
             }
 
+            //Creation of world
             World w = new World();
-            foreach (Room x in w.Rooms)
-            {
-                Console.WriteLine(x.Name + " " + x.Locked);
-                if (x.Items.Count > 0)
-                {
-                    Console.WriteLine("        Item: " + x.Items[0].Name);
-                }
-            }
+
         }
     }
 }
