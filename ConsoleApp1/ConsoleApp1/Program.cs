@@ -2,6 +2,7 @@
 using ClassLibrary1;
 using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace ConsoleApp1
 {
@@ -9,22 +10,20 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            //Test van ThoBerck
+            /*
             string test = "move left";
             Parser.ParseCommand(test, out List<String> keywords);
             foreach(var keyword in keywords)
             {
                 Console.WriteLine(keyword);
             }
+            */
 
-            World w = new World();
-            foreach (Room x in w.Rooms)
-            {
-                Console.WriteLine(x.Name + " " + x.Locked);
-                if (x.Items.Count > 0)
-                {
-                    Console.WriteLine("        Item: " + x.Items[0].Name);
-                }
-            }
+            //Creation of world
+            Console.WriteLine("I wake up in a dark room. I don't know where I am, or how I got here. But do I still remember my name?");
+            string Name = Console.ReadLine();
+            World w = new World(Name);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    internal class Player : Entity
+    public class Player : Entity
     {
         private List<Item> Inventory = new List<Item>();
         public string Name {get; private set; }
@@ -12,6 +12,12 @@ namespace ClassLibrary1
         public Player(string name)
         {
             Name = name;
+        }
+
+        //for debugging purpose
+        public override string ToString()
+        {
+            return "Name: " + Name + "ID: " + this.Id;
         }
     }
 }
