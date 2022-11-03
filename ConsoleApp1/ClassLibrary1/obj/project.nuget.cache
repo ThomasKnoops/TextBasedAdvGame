@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LRja9zQlErX9TjYzLwzGAzRM/Wi54oHerRFXpA5jL0KL2l3ImNyEq7WoZ3c90C5k9Wm5tpCUxlGI1U7H/ER+pA==",
+  "dgSpecHash": "hadLLVBkh6PMzZEd4chJ/XwCmoMy/l6U5OdxcyLcYcdrUUvRWzTAyOxkYEYWQ4MNGhN+HM6t/2do1jP2CWAmdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
+  "projectFilePath": "C:\\Users\\Thoma\\source\\repos\\TextBasedAdvGame2\\ConsoleApp1\\ClassLibrary1\\ClassLibrary1.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

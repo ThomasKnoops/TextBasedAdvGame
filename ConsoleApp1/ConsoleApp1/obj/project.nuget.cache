@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/+gOx0czgVk88fTormDR5kKDBbTfjMD6v4hg85OTrnX2dw7VNEePYSuEhqOsgpoTznwWvbJ6XWaGK5lKpXes+g==",
+  "dgSpecHash": "xTccNroy0rFOR0O9tVIeJ+Yvh1U17Oz4g5k5hdZo6jWxhG1HZvbgJ5ubiy0dz2BnrhmsXMrFEhbOUAT4Va3SKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thoma\\Documents\\GitHub\\TextBasedAdvGame\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.29\\microsoft.netcore.app.host.win-x64.3.1.29.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Thoma\\source\\repos\\TextBasedAdvGame2\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
