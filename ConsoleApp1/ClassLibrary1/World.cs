@@ -119,15 +119,22 @@ namespace ClassLibrary1
             if (CurrentRoom.LinkedRooms.ContainsKey(Direction))
             {
                 if (CurrentRoom.LinkedRooms[Direction].Locked)
-                    Console.WriteLine("I tried to open the door, but it is locked. I'll need to do something else");
-                else
                 {
-                    Console.WriteLine("I took the door to the " + Direction + ".");
-                    CurrentRoom = CurrentRoom.LinkedRooms[Direction];
-                    Console.WriteLine(CurrentRoom.Description);
+                    Console.WriteLine("I tried to open the door, but it is locked. I'll need to do something else");
+                    return;
                 }
-
+                if (Direction == "up")
+                    Console.WriteLine("I took the door to the floor above me.");
+                else if (Direction == "down")
+                    Console.WriteLine("I took the door to the floor beneat me.");
+                else
+                    Console.WriteLine("I took the door to the " + Direction + ".");
+                CurrentRoom = CurrentRoom.LinkedRooms[Direction];
+                Console.WriteLine(CurrentRoom.Description);
+                return;
             }
+            Console.WriteLine("There is no door in this direction...");
+            return;
         }
     }
 }
