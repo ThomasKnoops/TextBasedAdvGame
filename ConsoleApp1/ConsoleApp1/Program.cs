@@ -11,20 +11,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Test van ThoBerck
-            /*
-            string test = "move left";
-            Parser.ParseCommand(test, out List<String> keywords);
-            foreach(var keyword in keywords)
-            {
-                Console.WriteLine(keyword);
-            }
-            */
-
             //Creation of world with a name for the player
             Console.WriteLine("I wake up in a dark room. I don't know where I am, or how I got here. But do I still remember my name?");
             string Name = Console.ReadLine();
             World w = new World(Name);
+            Console.WriteLine("Ah yes... My name is " + Name + ". Maybe I should start by looking around a little more.");
+            Console.WriteLine(w.CurrentRoom.Description);
             bool playing = true; 
 
             //while playing == true --> spel is bezig
@@ -35,6 +27,8 @@ namespace ConsoleApp1
                 input = input.ToLower();
                 if (input == "help" || input == "help me")
                     HelpMe();
+                else if (input == "inv" || input == "inventory")
+                    ShowInventory(w);
                 else
                 {
                     Parser.CommandType commandType = Parser.ParseCommand(input, out List<string> keywords);
@@ -47,10 +41,10 @@ namespace ConsoleApp1
                             //TODO
                             break;
                         case Parser.CommandType.Take:
-                            //TODO
+                            TakeItem(keywords, w);
                             break;
                         case Parser.CommandType.Look:
-                            //TODO
+                            LookAround(keywords, w);
                             break;
                         case Parser.CommandType.Move:
                             MoveAround(keywords, w);
@@ -66,7 +60,7 @@ namespace ConsoleApp1
             
         }
 
-        //prints out all the options
+        //prints out all the commands
         private static void HelpMe()
         {
             Console.WriteLine("---------------------------------------------------------------------------------------");
@@ -77,8 +71,34 @@ namespace ConsoleApp1
             Console.WriteLine("     move [north/east/south/west/up/down] --> to move into the specified direction.");
             Console.WriteLine("     exit --> to give up.");
             Console.WriteLine("     help --> to see this handy list;");
+            Console.WriteLine("     inv --> to see my inventory");
             Console.WriteLine("---------------------------------------------------------------------------------------");
 
+        }
+
+        //show all the item the player has in its inventory
+        private static void ShowInventory(World w)
+        {
+            Console.WriteLine("---------------------------------------------------------------------------------------");
+            foreach (Item i in w.player.Inventory)
+                Console.WriteLine(i.Name + ": " + i.Description);
+            Console.WriteLine("---------------------------------------------------------------------------------------");
+        }
+
+        //Tries to take an item from the ground
+        private static void TakeItem(List<string> kw, World w)
+        {
+            bool tookSomething = w.PickUpItem(kw);
+            if (!tookSomething)
+                Console.WriteLine("I could not pick that up.");
+        }
+
+        //gives extra info about the object you look at
+        private static void LookAround(List<string> kw, World w)
+        {
+            bool sawSomething = w.LookAroundRoom(kw);
+            if (!sawSomething)
+                Console.WriteLine("I do not see anything special.");
         }
 
         //Move around in the world
