@@ -29,16 +29,16 @@ namespace ConsoleApp1
                     HelpMe();
                 else if (input == "inv" || input == "inventory")
                     ShowInventory(w);
-                else
+                else if(input.Contains("a") || input.Contains("e") || input.Contains("i") || input.Contains("o"))
                 {
                     Parser.CommandType commandType = Parser.ParseCommand(input, out List<string> keywords);
                     switch (commandType)
                     {
                         case Parser.CommandType.Undefined:
-                            Console.WriteLine("I don't know what to do with that...");
+                            Console.WriteLine("I don't know what to do... Use 'help me' to see all the commands.");
                             break;
                         case Parser.CommandType.Use:
-                            //TODO
+                            UseItem(keywords, w);
                             break;
                         case Parser.CommandType.Take:
                             TakeItem(keywords, w);
@@ -55,6 +55,11 @@ namespace ConsoleApp1
                         default:
                             break;
                     }
+                }
+                if (w.CurrentRoom == w.Rooms[2])
+                {
+                    Console.WriteLine("I did it! I escaped! FRRREEEEDDOOMMMM");
+                    playing = false;
                 }
             }
             
@@ -83,6 +88,22 @@ namespace ConsoleApp1
             foreach (Item i in w.player.Inventory)
                 Console.WriteLine(i.Name + ": " + i.Description);
             Console.WriteLine("---------------------------------------------------------------------------------------");
+        }
+
+        //Use an item you have in your inventory
+        private static void UseItem(List<string> kw, World w)
+        {
+            if (w.player.Inventory.Count < 1)
+            {
+                Console.WriteLine("I have no items to use.");
+                return;
+            }
+            if (kw.Count < 1)
+            {
+                Console.WriteLine("I do not know what item to use here.");
+                return;
+            }
+            w.UseIt(kw);
         }
 
         //Tries to take an item from the ground

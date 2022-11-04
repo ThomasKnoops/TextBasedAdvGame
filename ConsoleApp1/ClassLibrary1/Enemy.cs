@@ -6,7 +6,7 @@ namespace ClassLibrary1
 {
     public class Enemy : Entity
     {
-        public bool Distracted { get; private set; }
+        public bool Distracted { get; set; }
 
         public Enemy():base()
         {

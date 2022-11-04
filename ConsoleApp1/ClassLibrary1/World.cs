@@ -45,7 +45,7 @@ namespace ClassLibrary1
         {
             //Room 0 modifications (Basement)
             Rooms[0].Description = "This room looks like a basement. I see some old bottles and a doorway to the floor above me.";
-            Rooms[0].Items.Add(new TextItem("Note", "It has some text written on it. Maybe I should read that."));
+            Rooms[0].Items.Add(new TextItem("Note", "It has some text written on it. Maybe I should read that.", "I have been stuck here for 3 days now... I tried every door and window of this house to escape... Nothing worked... I think that I'm gonna die in here... I just can't find the right Key..."));
             Rooms[0].LinkedRooms.Add("up", Rooms[1]);
             Rooms[0].LookAround.Add("bottle", "There are lots of bottles here, some are full and some are empty. I think that 1 of the empty bottles has a note in it!");
             //Room 1 modifications (Grand Hall)
@@ -67,7 +67,7 @@ namespace ClassLibrary1
             Rooms[4].Description = "";
             Rooms[4].LinkedRooms.Add("east", Rooms[1]);
             Rooms[4].Locked = true;
-            Rooms[4].Items.Add(new Key("Key", "This is a copper key, used to open doors. But what door does it open?"));
+            Rooms[4].Items.Add(new Key("Copper Key", "This is a copper key, used to open doors. But what door does it open?", Rooms[1], Rooms[2]));
             //Room 5 modifications (Dining Room)
             Rooms[5].Description = "";
             Rooms[5].LinkedRooms.Add("west", Rooms[1]);
@@ -75,7 +75,7 @@ namespace ClassLibrary1
             //Room 6 modifications (Kitchen)
             Rooms[6].Description = "";
             Rooms[6].LinkedRooms.Add("west", Rooms[5]);
-            Rooms[6].Items.Add(new Food("Raw Beef", "Some raw beef, I wouldn't eat it"));
+            Rooms[6].Items.Add(new Food("Raw Beef", "Some raw beef, I wouldn't eat it", true));
             //Room 7 modifications (Staircase)
             Rooms[7].Description = "";
             Rooms[7].LinkedRooms.Add("up", Rooms[8]);
@@ -96,7 +96,7 @@ namespace ClassLibrary1
             //Room 10 modifications (Master Bathroom)
             Rooms[10].Description = "";
             Rooms[10].LinkedRooms.Add("east", Rooms[9]);
-            Rooms[10].Items.Add(new Key("Key", "This is an iron key, used to open doors. But what door does it open?"));
+            Rooms[10].Items.Add(new Key("Iron Key", "This is an iron key, used to open doors. But what door does it open?", Rooms[1], Rooms[4]));
             //Room 11 modifications (Guest Bedroom)
             Rooms[11].Description = "";
             Rooms[11].LinkedRooms.Add("south", Rooms[8]);
@@ -109,9 +109,26 @@ namespace ClassLibrary1
             Rooms[13].LinkedRooms.Add("west", Rooms[8]);
             Rooms[13].Items.Add(new LightSource("Flashlight", "A  flashlight that still has batteries in it! You can use it to see in the dark"));
             //Room 14 modifications (Attic)
-            Rooms[14].Description = "";
+            Rooms[14].Description = "I can not see a sinle thing in here... It is way to dark.";
             Rooms[14].LinkedRooms.Add("down", Rooms[8]);
-            Rooms[14].Items.Add(new Key("Lockpick set", "Tools that can be used to open some doors, if they are easy enough"));
+            Rooms[14].Items.Add(new Key("Lockpick set", "Tools that can be used to open some doors, if they are easy enough", Rooms[8], Rooms[9]));
+        }
+
+        //Uses an Item
+        public void UseIt(List<string> kw)
+        {
+            foreach (string keyword in kw)
+            {
+                foreach (Item i in player.Inventory)
+                {
+                    if (keyword.Contains(i.Name.ToLower())) 
+                    {
+                        i.UseMe(this);
+                        return;
+                    }
+                }
+            }
+            Console.WriteLine("I do not have that item with me.");
         }
 
         //moves an item from the room to the inventory
@@ -161,6 +178,17 @@ namespace ClassLibrary1
                 {
                     Console.WriteLine("I tried to open the door, but it is locked. I'll need to do something else.");
                     return;
+                }
+                if (CurrentRoom.Enemy != null)
+                {
+                    if (Direction == "west")
+                    {
+                        if (!CurrentRoom.Enemy.Distracted)
+                        {
+                            Console.WriteLine("There is a bloodthirsty, starving dog between me and the next room. I can not safely get past him.");
+                            return;
+                        }
+                    }
                 }
                 if (Direction == "up")
                     Console.WriteLine("I took the door to the floor above me.");

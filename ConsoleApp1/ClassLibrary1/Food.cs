@@ -4,8 +4,28 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    internal class Food : Item
+    internal class Food : Item, iEatable
     {
-        public Food(string name, string description):base(name,description) { }
+        bool Deadly;
+        public Food(string name, string description, bool deadly) : base(name, description)
+        {
+            Deadly = deadly;
+        }
+
+        public void Eat(World w)
+        {
+            if (w.CurrentRoom == w.Rooms[9])
+            {
+                w.player.Inventory.Remove(this);
+                w.CurrentRoom.Enemy.Distracted = true;
+                Console.WriteLine("Now that I fed the dog some food, I can get past him to the next room.");
+                return;
+            }
+        }
+
+        public override void UseMe(World w)
+        {
+            Eat(w);
+        }
     }
 }
