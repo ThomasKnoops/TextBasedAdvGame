@@ -7,9 +7,9 @@ namespace ClassLibrary1
 {
     public class World
     {
-        private Room CurrentRoom;
+        public Room CurrentRoom { get; private set; }
         public List<Room> Rooms { get; private set; } 
-        private Player player;
+        public Player player { get; private set; }
 
         public World(string Name)
         {
@@ -44,9 +44,10 @@ namespace ClassLibrary1
         public void AddRoomInfo()
         {
             //Room 0 modifications (Basement)
-            Rooms[0].Description = "";
-            Rooms[0].Items.Add(new TextItem("Note", "Help me! I'm stuck for 10 days already! If I could find the key, I could escape this murderhouse..."));
+            Rooms[0].Description = "This room looks like a basement. I see some old bottles and a doorway to the floor above me.";
+            Rooms[0].Items.Add(new TextItem("Note", "It has some text written on it. Maybe I should read that."));
             Rooms[0].LinkedRooms.Add("up", Rooms[1]);
+            Rooms[0].LookAround.Add("bottle", "There are lots of bottles here, some are full and some are empty. I think that 1 of the empty bottles has a note in it!");
             //Room 1 modifications (Grand Hall)
             Rooms[1].Description = "This seems like a big hub. Let's find out what's behind these doors.";
             Rooms[1].LinkedRooms.Add("up", Rooms[7]);
@@ -113,6 +114,44 @@ namespace ClassLibrary1
             Rooms[14].Items.Add(new Key("Lockpick set", "Tools that can be used to open some doors, if they are easy enough"));
         }
 
+        //moves an item from the room to the inventory
+        public bool PickUpItem(List<string> kw)
+        {
+            foreach (string keyword in kw)
+            {
+                foreach (Item i in CurrentRoom.Items)
+                {
+                    if (keyword.Contains(i.Name.ToLower()))
+                    {
+                        Console.WriteLine("I picked the " + i.Name + " up. " + i.Description);
+                        CurrentRoom.Items.Remove(i);
+                        player.Inventory.Add(i);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        //iterates over the keywords and LookAound property for matches
+        public bool LookAroundRoom(List<string> kw)
+        {
+            foreach (string keyword in kw)
+            {
+                foreach (var dict in CurrentRoom.LookAround)
+                {
+                    if (keyword.Contains(dict.Key))
+                    {
+                        Console.WriteLine(dict.Value);
+                        return true;
+                    }
+
+                }
+
+            }
+            return false;
+        }
+
         //change current room
         public void ChangeCurrentRoom(string Direction)
         {
@@ -120,7 +159,7 @@ namespace ClassLibrary1
             {
                 if (CurrentRoom.LinkedRooms[Direction].Locked)
                 {
-                    Console.WriteLine("I tried to open the door, but it is locked. I'll need to do something else");
+                    Console.WriteLine("I tried to open the door, but it is locked. I'll need to do something else.");
                     return;
                 }
                 if (Direction == "up")
@@ -136,5 +175,6 @@ namespace ClassLibrary1
             Console.WriteLine("There is no door in this direction...");
             return;
         }
+
     }
 }

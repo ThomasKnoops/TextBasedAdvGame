@@ -6,7 +6,7 @@ namespace ClassLibrary1
 {
     public class Player : Entity
     {
-        private List<Item> Inventory = new List<Item>();
+        public List<Item> Inventory = new List<Item>();
         public string Name {get; private set; }
 
         public Player(string name)

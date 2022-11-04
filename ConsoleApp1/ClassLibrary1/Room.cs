@@ -12,7 +12,8 @@ namespace ClassLibrary1
         public List<Item> Items { get; set; }
         public Enemy Enemy { get; set; }
         public Dictionary<string, Room> LinkedRooms { get; set; }
-        
+        public Dictionary<string, string> LookAround { get; set; }
+
 
         public Room(string name)
         {
@@ -22,6 +23,7 @@ namespace ClassLibrary1
             Items = new List<Item>();
             Enemy = null;
             LinkedRooms = new Dictionary<string, Room>();
+            LookAround = new Dictionary<string, string>();
         }
 
     }
