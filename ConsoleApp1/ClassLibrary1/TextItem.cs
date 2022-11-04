@@ -4,8 +4,24 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    internal class TextItem : Item
+    internal class TextItem : Item, iReadable
     {
-        public TextItem(string name, string description) : base(name, description) { }
+        public string Content { get; private set; }
+        public TextItem(string name, string description, string content) : base(name, description)
+        {
+            Content = content;
+        }
+
+
+
+        public void Read()
+        {
+            Console.WriteLine(Content);
+        }
+
+        public override void UseMe(World w)
+        {
+            this.Read();
+        }
     }
 }
