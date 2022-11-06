@@ -27,6 +27,11 @@ namespace ClassLibrary1
                 {
                     Console.WriteLine("I opened the door leading to the " + room.Key + ".");
                     room.Value.Locked = false;
+                    if (this.Name == "Lockpick set")
+                    {
+                        Console.WriteLine("Fuck... I broke the lockpick set.");                 
+                    }
+                    w.player.Inventory.Remove(this);
                 }
 
             }

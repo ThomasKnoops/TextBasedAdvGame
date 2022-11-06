@@ -48,12 +48,13 @@ namespace ClassLibrary1
         {
             //Room 0 modifications (Basement)
             Rooms[0].Description = "This room looks like a basement. I see some old bottles and a doorway to the floor above me.";
-            Rooms[0].Items.Add(new TextItem("Note", "It has some text written on it. Maybe I should read that.", "I have been stuck here for 3 days now... I tried every door and window of this house to escape... Nothing worked... I think that I'm gonna die in here... I just can't find the right Key..."));
+            Rooms[0].Items.Add(new TextItem("Note", "It has some text written on it. Maybe I should read that.", "I have been stuck here for 3 days now. I tried every door and window of this house to escape. Nothing worked. I think that I'm gonna die in here. I just can't find the right Key..."));
             Rooms[0].LinkedRooms.Add("up", Rooms[1]);
             Rooms[0].LookAround.Add("bottle", "There are lots of bottles here, some are full and some are empty. I think that 1 of the empty bottles has a note in it!");
+            Rooms[0].LookAround.Add("note", "I can't read the note without taking it out of the bottle.");
             //Room 1 modifications (Grand Hall)
             Rooms[1].Description = "This seems like a big hub. Let's find out what's behind these doors.";
-            Rooms[1].LinkedRooms.Add("up", Rooms[7]);
+            Rooms[1].LinkedRooms.Add("up", Rooms[8]);
             Rooms[1].LinkedRooms.Add("down", Rooms[0]);
             Rooms[1].LinkedRooms.Add("east", Rooms[5]);
             Rooms[1].LinkedRooms.Add("west", Rooms[4]);
@@ -73,7 +74,7 @@ namespace ClassLibrary1
             Rooms[4].Description = "There are so much books in this room, it seems like a study room. I see a beautiful desk in the middle of the room.";
             Rooms[4].LinkedRooms.Add("east", Rooms[1]);
             Rooms[4].Locked = true;
-            Rooms[4].Items.Add(new Key("Copper Key", "This is a copper key, used to open doors. But what door does it open?", Rooms[1], Rooms[2]));
+            Rooms[4].Items.Add(new Key("Key", "This is a copper key, used to open doors. But what door does it open?", Rooms[1], Rooms[2]));
             Rooms[4].LookAround.Add("desk", "Let me carefully check all the drawers and see what is inside. " +
                 "..." +
                 "In the last drawer I see something coppery that looks like a key.");
@@ -87,14 +88,14 @@ namespace ClassLibrary1
             Rooms[6].Description = "I took the room to the right, which is definitely a kitchen, a dirty one in fact. There is even a piece of raw beef in a pan. Luckily the stove isn't on!" +
                 "\n There is nothing else of interest in this room...";
             Rooms[6].LinkedRooms.Add("west", Rooms[5]);
-            Rooms[6].Items.Add(new Food("Raw Beef", "Some raw beef, I wouldn't eat it", true));
+            Rooms[6].Items.Add(new Food("Beef", "Some raw beef, I wouldn't eat it", true));
             //Room 7 modifications (Staircase)
-            Rooms[7].Description = "There is a lot of stairs... Should I go up or down?";
-            Rooms[7].LinkedRooms.Add("up", Rooms[8]);
-            Rooms[7].LinkedRooms.Add("down", Rooms[1]);
+            //Rooms[7].Description = "There is a lot of stairs... Should I go up or down?";
+            //Rooms[7].LinkedRooms.Add("up", Rooms[8]);
+            //Rooms[7].LinkedRooms.Add("down", Rooms[1]);
             //Room 8 modifications (Upper hall)
             Rooms[8].Description = "Wow! There are doors to each direction! What should I do next?";
-            Rooms[8].LinkedRooms.Add("down", Rooms[7]);
+            Rooms[8].LinkedRooms.Add("down", Rooms[1]);
             Rooms[8].LinkedRooms.Add("west", Rooms[9]);
             Rooms[8].LinkedRooms.Add("north", Rooms[11]);
             Rooms[8].LinkedRooms.Add("east", Rooms[13]);
@@ -109,8 +110,8 @@ namespace ClassLibrary1
             //Room 10 modifications (Master Bathroom)
             Rooms[10].Description = "A big luxurious bathroom with a big tub in the middle. This must be the owner's bathroom. There is a medicin cabinet above the sink.";
             Rooms[10].LinkedRooms.Add("east", Rooms[9]);
-            Rooms[10].Items.Add(new Key("Iron Key", "This is an iron key, used to open doors. But what door does it open?", Rooms[1], Rooms[4]));
-            Rooms[10].LookAround.Add("cabinet", "What do I see there? A iron key?");
+            Rooms[10].Items.Add(new Key("Key", "This is an iron key, used to open doors. But what door does it open?", Rooms[1], Rooms[4]));
+            Rooms[10].LookAround.Add("cabinet", "What do I see there? An iron key?");
             //Room 11 modifications (Guest Bedroom)
             Rooms[11].Description = "This is a small bedroom and there is a door right in front of me.";
             Rooms[11].LinkedRooms.Add("south", Rooms[8]);
@@ -128,7 +129,7 @@ namespace ClassLibrary1
             //Room 14 modifications (Attic)
             Rooms[14].Description = "I can not see a single thing in here... It is way to dark.";
             Rooms[14].LinkedRooms.Add("down", Rooms[8]);
-            Rooms[14].Items.Add(new Key("Lockpick set", "Tools that can be used to open some doors, if they are easy enough", Rooms[8], Rooms[9])); // TODO: Hoe moet de gebruiker weten dat er een lockpick zit in deze ruimte?
+            Rooms[14].Items.Add(new Key("Lockpick", "Tools that can be used to open some doors, if they are easy enough", Rooms[8], Rooms[9])); // TODO: Hoe moet de gebruiker weten dat er een lockpick zit in deze ruimte?
         }
 
         //Uses an Item
@@ -151,6 +152,7 @@ namespace ClassLibrary1
         //moves an item from the room to the inventory
         public bool PickUpItem(List<string> kw)
         {
+            bool returntype = false;
             foreach (string keyword in kw)
             {
                 foreach (Item i in CurrentRoom.Items)
@@ -160,16 +162,17 @@ namespace ClassLibrary1
                         Console.WriteLine("I picked the " + i.Name + " up. " + i.Description);
                         CurrentRoom.Items.Remove(i);
                         player.Inventory.Add(i);
-                        return true;
+                        returntype = true;
                     }
                 }
             }
-            return false;
+            return returntype;
         }
 
         //iterates over the keywords and LookAound property for matches
         public bool LookAroundRoom(List<string> kw)
         {
+            bool returntype = false;
             foreach (string keyword in kw)
             {
                 foreach (var dict in CurrentRoom.LookAround)
@@ -177,13 +180,13 @@ namespace ClassLibrary1
                     if (keyword.Contains(dict.Key))
                     {
                         Console.WriteLine(dict.Value);
-                        return true;
+                        returntype = true;
                     }
 
                 }
 
             }
-            return false;
+            return returntype;
         }
 
         //change current room
