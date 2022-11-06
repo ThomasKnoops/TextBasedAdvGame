@@ -16,7 +16,7 @@ namespace ClassLibrary1
                 return;
             }
             w.CurrentRoom.Description = "This is the attic. I see some old boxes against the wall with lots of dust on them.";
-            Console.WriteLine("Finnaly! I can see in this room. It looks like this is the attic. I see some old boxes against the wall with lots of dust on them.");
+            Console.WriteLine("Finally! I can see in this room. It looks like this is the attic. I see some old boxes against the wall with lots of dust on them.");
             return;
         }
 
