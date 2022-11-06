@@ -152,7 +152,6 @@ namespace ClassLibrary1
         //moves an item from the room to the inventory
         public bool PickUpItem(List<string> kw)
         {
-            bool returntype = false;
             foreach (string keyword in kw)
             {
                 foreach (Item i in CurrentRoom.Items)
@@ -162,17 +161,16 @@ namespace ClassLibrary1
                         Console.WriteLine("I picked the " + i.Name + " up. " + i.Description);
                         CurrentRoom.Items.Remove(i);
                         player.Inventory.Add(i);
-                        returntype = true;
+                        return true;
                     }
                 }
             }
-            return returntype;
+            return false;
         }
 
         //iterates over the keywords and LookAound property for matches
         public bool LookAroundRoom(List<string> kw)
         {
-            bool returntype = false;
             foreach (string keyword in kw)
             {
                 foreach (var dict in CurrentRoom.LookAround)
@@ -180,13 +178,13 @@ namespace ClassLibrary1
                     if (keyword.Contains(dict.Key))
                     {
                         Console.WriteLine(dict.Value);
-                        returntype = true;
+                        return true;
                     }
 
                 }
 
             }
-            return returntype;
+            return false;
         }
 
         //change current room
