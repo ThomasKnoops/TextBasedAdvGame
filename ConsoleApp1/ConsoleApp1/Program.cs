@@ -12,16 +12,21 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             //Creation of world with a name for the player
+            Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            Console.WriteLine("X Game INFO                                                                                          X");
+            Console.WriteLine("X Type help in the console to get all the possible commands.                                         X");
+            Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + "\n");
             Console.WriteLine("I wake up in a dark room. I don't know where I am, or how I got here. But do I still remember my name?");
             string Name = Console.ReadLine();
             World w = new World(Name);
             Console.WriteLine("Ah yes... My name is " + Name + ". Maybe I should start by looking around a little more.");
-            Console.WriteLine(w.CurrentRoom.Description);
+            Console.WriteLine(w.CurrentRoom.Description + "\n");
             bool playing = true; 
 
             //while playing == true --> spel is bezig
             while (playing)
             {
+                Console.WriteLine("--------------------");
                 Console.WriteLine("What will I do?");
                 string input = Console.ReadLine();
                 input = input.ToLower();
@@ -73,7 +78,7 @@ namespace ConsoleApp1
             Console.WriteLine("     use [item] --> to use an item in my inventory.");
             Console.WriteLine("     take [item] --> to take an item from the room.");
             Console.WriteLine("     look [object/place] --> to get an better view.");
-            Console.WriteLine("     move [north/east/south/west/up/down] --> to move into the specified direction.");
+            Console.WriteLine("     move/go [north/east/south/west/up/down] --> to move into the specified direction.");
             Console.WriteLine("     exit --> to give up.");
             Console.WriteLine("     help --> to see this handy list;");
             Console.WriteLine("     inv --> to see my inventory");

@@ -25,7 +25,7 @@ namespace ClassLibrary1
             {
                 if (Keyhole.Contains(room.Value))
                 {
-                    Console.WriteLine("I opend the door leading to the " + room.Key + ".");
+                    Console.WriteLine("I opened the door leading to the " + room.Key + ".");
                     room.Value.Locked = false;
                 }
 
