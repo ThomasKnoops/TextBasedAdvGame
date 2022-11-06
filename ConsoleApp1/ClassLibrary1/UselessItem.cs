@@ -10,6 +10,7 @@ namespace ClassLibrary1
 
         public override void UseMe(World w)
         {
+            Console.WriteLine("I do not see a use for that item in here.");
             return;
         }
     }

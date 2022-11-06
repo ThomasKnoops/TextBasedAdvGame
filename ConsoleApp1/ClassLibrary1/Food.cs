@@ -21,6 +21,7 @@ namespace ClassLibrary1
                 Console.WriteLine("Now that I fed the dog some food, I can get past him to the next room.");
                 return;
             }
+            Console.WriteLine("This is raw... I am NOT going to eat this!");
         }
 
         public override void UseMe(World w)
