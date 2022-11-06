@@ -19,6 +19,7 @@ namespace ClassLibrary1
                 w.player.Inventory.Remove(this);
                 w.CurrentRoom.Enemy.Distracted = true;
                 Console.WriteLine("Now that I fed the dog some food, I can get past him to the next room.");
+                w.CurrentRoom.Description = "A big bedroom, it is probably the bedroom of the owner of the house. There is a friendly dog you just fed, sleeping besides the bed.";
                 return;
             }
             Console.WriteLine("This is raw... I am NOT going to eat this!");
