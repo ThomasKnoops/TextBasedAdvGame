@@ -53,7 +53,7 @@ namespace ClassLibrary1
             Rooms[0].LookAround.Add("bottle", "There are lots of bottles here, some are full and some are empty. I think that 1 of the empty bottles has a note in it!");
             Rooms[0].LookAround.Add("note", "I can't read the note without taking it out of the bottle.");
             //Room 1 modifications (Grand Hall)
-            Rooms[1].Description = "This seems like a big hub. Let's find out what's behind these doors.";
+            Rooms[1].Description = "This seems like a big hub. There is a lot of doors and even a staircase that's going up. Let's discover the mysteries that this room has hidden.";
             Rooms[1].LinkedRooms.Add("up", Rooms[8]);
             Rooms[1].LinkedRooms.Add("down", Rooms[0]);
             Rooms[1].LinkedRooms.Add("east", Rooms[5]);
