@@ -29,7 +29,7 @@ namespace ClassLibrary1
                     room.Value.Locked = false;
                     if (this.Name == "Lockpick")
                     {
-                        Console.WriteLine("Fuck... I broke the lockpick set.");                 
+                        Console.WriteLine("Fuck... I broke the lockpick.");                 
                     }
                     w.player.Inventory.Remove(this);
                 }
